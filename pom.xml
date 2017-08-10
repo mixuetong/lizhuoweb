@@ -7,6 +7,15 @@
   <version>1.0-SNAPSHOT</version>
   <name>lizhuo.web Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -129,5 +138,13 @@
   </dependencies>
   <build>
     <finalName>lizhuo.web</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>9.2.22.v20170606</version>
+      </plugin>
+    </plugins>
   </build>
 </project>
