@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lizhuo.idao.IUserDAO">
+
+    <resultMap type="com.lizhuo.model.UserDo" id="UserDo" autoMapping="true">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="findAllUser" resultMap="UserDo">
+        select * from t_puser order by id asc limit 10
+    </select>
+
+    <select id="getUser" resultMap="UserDo">
+        select * from t_puser where tel=#{tel}
+    </select>
+<!--
+    <insert id="addUser" parameterType="UserDo" useGeneratedKeys="true" keyProperty="id">
+        insert into user (username, password) values (#{username}, #{password})
+    </insert>
+-->
+
+</mapper>
